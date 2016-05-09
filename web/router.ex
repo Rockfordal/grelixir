@@ -1,11 +1,14 @@
 defmodule App.Router do
   use App.Web, :router
 
+  pipeline :csrf do
+    plug :protect_from_forgery #flyttat hit från browser
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
-    plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 

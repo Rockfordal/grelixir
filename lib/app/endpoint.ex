@@ -35,5 +35,7 @@ defmodule App.Endpoint do
     key: "_app_key",
     signing_salt: "RqkaCJfw"
 
+
+  plug Corsica, origins: "http://localhost:3000"
   plug App.Router
 end
