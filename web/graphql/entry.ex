@@ -8,6 +8,7 @@ defmodule App.PublicSchema do
       query: %GraphQL.Type.ObjectType{
         name: "PublicQueries",
         fields: %{
+          projects: App.Query.Projects.get,
           authors: App.Query.Authors.get,
           comments: App.Query.Comments.get,
           posts: App.Query.Posts.get,
