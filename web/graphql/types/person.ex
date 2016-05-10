@@ -1,12 +1,14 @@
-defmodule App.Type.Project do
+defmodule App.Type.Person do
   @type_string %{type: %GraphQL.Type.String{}}
 
   def get do
     %GraphQL.Type.ObjectType{
-      name: "Project",
+      name: "Person",
       fields: %{
         id: @type_string,
-        name: @type_string,
+        firstname: @type_string,
+        lastname: @type_string,
+        username: @type_string,
       }
     }
   end
