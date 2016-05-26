@@ -36,6 +36,7 @@ defmodule App.Endpoint do
     signing_salt: "RqkaCJfw"
 
 
-  plug Corsica, origins: "http://localhost:3000"
+  plug Corsica, origins: "*" # "http://localhost:3000"
+  #plug CORSPlug
   plug App.Router
 end
