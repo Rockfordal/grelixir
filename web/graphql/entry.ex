@@ -1,4 +1,4 @@
-# breakup query and mutations into separate modules this module
+  # breakup query and mutations into separate modules this module
 # will glue everything together and expose the endpoint
 
 defmodule App.PublicSchema do
@@ -16,12 +16,12 @@ defmodule App.PublicSchema do
         }
       },
 
-      #mutation: %GraphQL.Type.ObjectType{
-        #name: "PublicMutations",
-        #fields: %{
-          #save_greeting: App.Mutation.Greeting.get,
-        #}
-      #}
+      mutation: %GraphQL.Type.ObjectType{
+        name: "PublicMutations",
+        fields: %{
+          deleteperson: App.Mutation.Person.get,
+        }
+      }
 
     }
   end
