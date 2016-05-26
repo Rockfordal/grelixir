@@ -1,9 +1,9 @@
 defmodule App.Router do
   use App.Web, :router
 
-  pipeline :csrf do
-    plug :protect_from_forgery #flyttat hit från browser
-  end
+  # pipeline :csrf do
+  #   plug :protect_from_forgery #flyttat hit från browser
+  # end
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,6 +13,7 @@ defmodule App.Router do
   end
 
   pipeline :api do
+    # plug CORSPlug, [origin: "http://localhost:3000"]
     plug :accepts, ["json"]
   end
 
